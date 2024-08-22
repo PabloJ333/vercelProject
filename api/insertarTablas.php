@@ -1,52 +1,50 @@
 <?php
-include ("conexion.php");
+include("conexion.php");
+
+// Conexión a la base de datos
 $conexion = connection();
-$sql1 = "CREATE TABLE ah_coordenadas (
-  id int(11) NOT NULL,
-  longitud float NOT NULL,
-  latitud float NOT NULL,
-  fecha datetime NOT NULL,
-  codigo int()
-);
-";
-$sql2="CREATE TABLE aj_estado_led (
-  id int(11) NOT NULL,
-  estado_bool tinyint(1) NOT NULL
+
+// Consulta SQL para crear la tabla ah_coordenadas
+$sql1 = "CREATE TABLE IF NOT EXISTS aj_coordenadas (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  longitud FLOAT NOT NULL,
+  latitud FLOAT NOT NULL,
+  fecha DATETIME NOT NULL,
+  codigo INT(11) NOT NULL
 );";
-$sql3="INSERT INTO aj_estado_led (id, estado_bool) VALUES
-(1, 0);
-";
-$sql4="CREATE TABLE aj_sensordis (
-  id int(11) NOT NULL,
-  distancia varchar(30) NOT NULL,
-  fecha_hora datetime NOT NULL
+
+// Consulta SQL para crear la tabla aj_estado_led
+$sql2 = "CREATE TABLE IF NOT EXISTS aj_estado_led (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  estado_bool TINYINT(1) NOT NULL
 );";
-if (mysqli_query($conexion, $sql1)) {
-    http_response_code(200); 
-    echo "Datos insertados correctamente";
-} else {
-    http_response_code(500);
-    echo "Error: " . $sql1 . "<br>" . mysqli_error($conexion);
+
+// Insertar datos en la tabla aj_estado_led
+$sql3 = "INSERT INTO aj_estado_led (estado_bool) VALUES
+(0);";
+
+// Consulta SQL para crear la tabla aj_sensordis
+$sql4 = "CREATE TABLE IF NOT EXISTS aj_sensordis (
+  id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  distancia VARCHAR(30) NOT NULL,
+  fecha_hora DATETIME NOT NULL
+);";
+
+// Función para ejecutar las consultas
+function ejecutarConsulta($conexion, $sql) {
+    if (mysqli_query($conexion, $sql)) {
+        echo "Operación realizada correctamente<br>";
+    } else {
+        echo "Error: " . mysqli_error($conexion) . "<br>";
+    }
 }
-if (mysqli_query($conexion, $sql2)) {
-    http_response_code(200); 
-    echo "Datos insertados correctamente";
-} else {
-    http_response_code(500);
-    echo "Error: " . $sql2 . "<br>" . mysqli_error($conexion);
-}
-if (mysqli_query($conexion, $sql3)) {
-    http_response_code(200); 
-    echo "Datos insertados correctamente";
-} else {
-    http_response_code(500);
-    echo "Error: " . $sql3 . "<br>" . mysqli_error($conexion);
-}
-if (mysqli_query($conexion, $sql4)) {
-    http_response_code(200); 
-    echo "Datos insertados correctamente";
-} else {
-    http_response_code(500);
-    echo "Error: " . $sql4 . "<br>" . mysqli_error($conexion);
-}
+
+// Ejecutar las consultas
+ejecutarConsulta($conexion, $sql1);
+ejecutarConsulta($conexion, $sql2);
+ejecutarConsulta($conexion, $sql3);
+ejecutarConsulta($conexion, $sql4);
+
+// Cerrar la conexión
+mysqli_close($conexion);
 ?>
