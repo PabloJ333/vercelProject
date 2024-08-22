@@ -6,13 +6,13 @@
   },
   "routes": [
     { "src": "/(.*)",  "dest": "/api/index.php" },
-    { "src": "/esp32_insertar",  "dest": "/api/esp32_insertar.php" },
-    { "src": "/esp32_update_cords",  "dest": "/api/esp32_update_cords.php" },
-    { "src": "/esp32_update",  "dest": "/api/esp32_update.php" },
-    { "src": "/insertarTablas",  "dest": "/api/insertarTablas.php" },
-    { "src": "/led_control",  "dest": "/api/led_control.php" },
-    { "src": "/obtener_cords",  "dest": "/api/obtener_cords.php" },
-    { "src": "/obtener_datos",  "dest": "/api/obtener_datos.php" },
-    { "src": "/pagina2",  "dest": "/api/pagina2.php" }
+    { "src": "/esp32_insertar.php",  "dest": "/api/esp32_insertar.php" },
+    { "src": "/esp32_update_cords.php",  "dest": "/api/esp32_update_cords.php" },
+    { "src": "/esp32_update.php",  "dest": "/api/esp32_update.php" },
+    { "src": "/insertarTablas.php",  "dest": "/api/insertarTablas.php" },
+    { "src": "/led_control.php",  "dest": "/api/led_control.php" },
+    { "src": "/obtener_cords.php",  "dest": "/api/obtener_cords.php" },
+    { "src": "/obtener_datos.php",  "dest": "/api/obtener_datos.php" },
+    { "src": "/pagina2.php",  "dest": "/api/pagina2.php" }
   ]
 }
