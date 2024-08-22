@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Hola mundo</h1>
+    <a href="pagina2.php">Pagina 2</a>
 </body>
 </html>
 
