@@ -1,1 +1,3 @@
-<a href="index.php">Volver al inicio</a>
+<html>
+	Bienvenido  la pagina 2
+</html>
