@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $distancia = $_POST['distancia'];
         $fecha_hora = $_POST['fecha_hora'];
 
-        $sql = "INSERT INTO sensordis (distancia, fecha_hora) VALUES ('$distancia', NOW())";
+        $sql = "INSERT INTO sensordis aj_(distancia, fecha_hora) VALUES ('$distancia', NOW())";
 
         if (mysqli_query($conexion, $sql)) {
             http_response_code(200); 
