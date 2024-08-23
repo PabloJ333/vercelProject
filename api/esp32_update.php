@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $led_id = intval($_POST['check_LED_status']);
     
-    $sql = "SELECT estado_bool FROM estado_led WHERE id = $led_id";
+    $sql = "SELECT estado_bool FROM aj_estado_led WHERE id = $led_id";
     $result = $conn->query($sql);
     
     if ($result->num_rows > 0) {
