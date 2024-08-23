@@ -6,7 +6,7 @@
         $lat = $_GET['lat'];
         $lng = $_GET['lng'];
 
-        $query = "UPDATE TABLE coordenadas SET longitud=$lng, latitud=$lat";
+        $query = "UPDATE TABLE aj_coordenadas SET longitud=$lng, latitud=$lat";
 
         if (mysqli_query($conn, $query)) {
             echo "Datos insertados correctamente";
