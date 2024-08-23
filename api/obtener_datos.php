@@ -8,7 +8,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, distancia, fecha_hora FROM sensordis ORDER BY fecha_hora DESC";
+$sql = "SELECT id, distancia, fecha_hora FROM aj_sensordis ORDER BY fecha_hora DESC";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
