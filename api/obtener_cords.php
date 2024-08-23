@@ -7,7 +7,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, longitud, latitud, fecha FROM coordenadas ORDER BY fecha DESC";
+$sql = "SELECT id, longitud, latitud, fecha, codigo FROM aj_coordenadas ORDER BY fecha DESC";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
